@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"os"
 	"time"
+
+	"github.com/pkg/errors"
 )
 
 type Logger struct {
@@ -36,4 +38,8 @@ func (log Logger) I(msg string) {
 
 func (log Logger) E(msg string) {
 	log.Write(msg, "ERROR")
+}
+
+func (log Logger) Err(err error) {
+	log.Write(fmt.Sprintf("%+v", err), "ERROR")
 }
