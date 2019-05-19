@@ -4,8 +4,6 @@ import (
 	"fmt"
 	"os"
 	"time"
-
-	"github.com/pkg/errors"
 )
 
 type Logger struct {
